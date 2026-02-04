@@ -366,8 +366,11 @@ const ASSETS = {
     }).join("");
   
     choicesDiv.querySelectorAll("button").forEach(btn => {
-      btn.addEventListener("click", () => onChoose(Number(btn.getAttribute("data-i"))));
-    });
+        btn.addEventListener("click", (e) => {
+          e.currentTarget.blur();
+          onChoose(Number(btn.getAttribute("data-i")));
+        });
+      });
   }
   
   function onChoose(i){
